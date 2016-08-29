@@ -11,7 +11,7 @@
   <h3> Postez votre mail!</h3>
   </div>
   <div class="col-md-offset-2 col-md-8">
-   <form action="send_mail2.php"
+   <form action="send_mail.php"
            method="post">
            <div class="form-group">
             <label>Adresse : </label> 
@@ -23,7 +23,27 @@
        </div>
             <input type="submit" class="btn btn-default" value ="Valider"/>
 </form>
-   </div>
+
+</div>
+   <?php
+if (    isset($_POST["mail"])
+        AND isset($_POST["objet"]) )
+{
+$adresse = $_POST["mail"];
+$objet = $_POST["objet"];
+$message = $_POST["message"];
+$headers = 'From: juliette@saint-jalme.fr ' . "\r\n" .
+     'Reply-To: juliette@saint-jalme.fr ' . "\r\n" .
+     'X-Mailer: PHP/' . phpversion();
+mail($adresse, $objet, $message, $headers);
+header('Location: send_mail3.php');
+}
+if (empty($_POST["mail"])
+   AND empty($_POST["objet"])) {
+   echo '<h5>Veuillez remplir les champs suivants :</h5>';
+};
+
+?>
     
 </body>
 </html>
