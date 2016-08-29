@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Formulaire pour mail</title>
     <link href="elements/bootstrap-3.3.6-dist/css/bootstrap.css" rel="stylesheet"/>
-    <link type="text/css" rel="stylesheet" href="send_mail.css"/>
+    <link type="text/css" rel="stylesheet" href="elements/send_mail.css"/>
 </head>
 <body class="block_2">
  <div class="col-md-offset-4 col-md-5">
